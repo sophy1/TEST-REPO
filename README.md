@@ -1,4 +1,5 @@
 ### Well hello there!
+[![TEST](https://img.shields.io/badge/DEEPSCAN-85-red.svg)](http://deepscan.io)
 
 This repository is meant to provide an example for *forking* a repository on GitHub.
 
