@@ -168,5 +168,3 @@ process.on('SIGTERM', function () {
     logger.info('gracefully shutting down from SIGTERM');
     gracefulExit();
 });
-Contact GitHub API Training Shop Blog About
-© 2016 GitHub, Inc. Terms Privacy Security Status Help
