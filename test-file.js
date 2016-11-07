@@ -171,4 +171,10 @@ process.on('SIGTERM', function () {
 });
 
 
-test code
+var a;
+console.log(a);
+
+
+if (typeof a === 'Array') {
+    console.log('It\'s an array!');
+}
