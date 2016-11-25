@@ -249,38 +249,3 @@ function SAME_OPERAND_VALUE(width) {
     }
     return xDiff;
 }
-
-function BAD_MIN_MAX_FUNC(value) {
-    var duration = value;
-    duration = Math.max(1000, duration);
-    duration = Math.min(200, duration);
-    console.log('Should 200 <= x <= 1000', duration);
-}
-
-function ASSIGN_SAME_VALUE() {
-    var a = 11;
-    var b = 3;
-    var r;
-
-    if (b < a) {
-        r = a;
-        a = b;
-        b = a;
-    }
-
-    console.log(a + ' ' + b);
-}
-
-function BAD_ASSIGN_IN_CONDITION(notification, payload, sender) {
-    if (notification === "SHOW_ALERT") {
-        if (typeof payload.type === "undefined") { payload.type = "alert"; }
-        if (payload.type == "alert") {
-            this.show_alert(payload,sender);
-        } else if (payload.type = "notification") { // 2)
-            this.show_notification(payload); // 3)
-        }
-    } else if (notification === "HIDE_ALERT") {
-        this.hide_alert(sender);
-    }
-}
-
