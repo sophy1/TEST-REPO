@@ -249,3 +249,8 @@ function SAME_OPERAND_VALUE(width) {
     }
     return xDiff;
 }
+
+function newfunc1() {
+    var b;
+    console.log(b.a);
+}
