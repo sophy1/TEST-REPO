@@ -3,6 +3,6 @@
             console.log('x is array');
         }
 
-        var obj;
-        var y = obj.x; // NULL_POINTER alarm
+        //var obj;
+        //var y = obj.x; // NULL_POINTER alarm
     }
