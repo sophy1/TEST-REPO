@@ -2,10 +2,10 @@ var moduleInstance = new require('module').Module(); // CALL_REQUIRE_AS_CONSTRUC
 
     let obj = {
         set name(n) {
-            this._name = n;
+            this.name = n; // GETTER_SETTER_RECURSION alarm because 'obj.name = "John"' causes an infinite call.
         },
         get name() {
-            return this._name;
+            return this.name; // GETTER_SETTER_RECURSION alarm
         }
     }
     obj.name = "John";
