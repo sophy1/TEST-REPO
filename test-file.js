@@ -1,22 +1,13 @@
     import Vue from 'vue';
 
+    Vue.component('Hello', {
+      propsData: { // VUE_MISPLACED_OPTION alarm because 'propsData' option is used in a Vue component option.
+        msg: 'hello'
+      },
+      template: '<div>{{ msg }}</div>'
+    });
+
     new Vue({
       el: '#app',
-      template: '<div>{{ prevYear}} {{ nextYear }}</div>',
-      data: {
-        currentYear: new Date().getFullYear()
-      },
-      computed: {
-        prevYear() { // VUE_MISSING_RETURN_VALUE_IN_COMPUTED
-          this.currentYear - 1;
-        },
-        nextYear: {
-          get() { // VUE_MISSING_RETURN_VALUE_IN_COMPUTED
-            this.currentYear + 1;
-          },
-          set(nextYear) {
-            this.currentYear = nextYear - 1;
-          }
-        }
-      }
+      template: '<Hello msg="hi" />'
     });
