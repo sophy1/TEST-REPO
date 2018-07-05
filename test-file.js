@@ -1,19 +1,18 @@
-import React from 'react';
+import Vue from 'vue';
 
-class Foo extends React.Component {
-    render() {
-        return (
-            <div>
-                {this.props.items.length && `(${this.props.items.join(', ')})`} {/* BAD_LENGTH_CHECK alarm */}
-            </div>
-        );
+// Example 1
+new Vue({
+  el: '#app',
+  data: {
+    $options: [ // VUE_RESERVED_PROPERTY_IN_OPTION alarm because the '$options' property is predefined in a Vue instance.
+      { id: 'opt1', name: 'my option 1' },
+      { id: 'opt2', name: 'my option 2' }
+    ]
+  },
+  methods: {
+    $set() { // VUE_RESERVED_PROPERTY_IN_OPTION alarm because the '$set' method is predefined in a Vue instance.
+      // do something
     }
-
-    coerce() {
-      var cssString = "";
-      var backPosition;
-      if (animatedBackground.length === 3) {
-          cssString += "backgroundPosition: " + backPosition + "px; "; // BAD_TYPE_COERCION alarm: Expression 'backPosition' has an undefined value and type-coerced to string type.
-      }
-    }
-}
+  },
+  template: '<div @click="$set"><div v-for="opt in $options" :key="opt.id">{{ opt.name }}</div></div>'
+});
