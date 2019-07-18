@@ -9,5 +9,5 @@
 
     new Vue({
       el: '#app',
-      template: '<Hello msg="hi" />'
+      template: '<Hello msg="hi"/>'
     });
